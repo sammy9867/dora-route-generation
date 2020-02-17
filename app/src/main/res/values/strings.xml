@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="app_name">Dora</string>
+    <string name="places_api_key">Enter API key</string>
+
+    <!--Layout Strings-->
+    <string name="multi_selection_toolbar_tv">Select 3 items</string>
+    <string name="priority_toolbar_tv">Place Filter</string>
+    <string name="set_location_toolbar_tv">Location Details</string>
+    <string name="set_location_tv">For now, default location is users current location</string>
+    <string name="user_input_toolbar_tv">Set Time Slot</string>
+    <string name="from_tv">FROM</string>
+    <string name="to_tv">TO</string>
+    <string name="set_time_button">SET TIME</string>
+    <string name="less_tv">LESS</string>
+    <string name="med_tv">MED</string>
+    <string name="more_tv">MORE</string>
+
+    <string name="img_button_next_description">Click this button to go to the next screen</string>
+    <string name="img_button_close_description">Click this button to go back to the previous screen</string>
+    <string name="img_view_drag_description">Hold this button to drag items in the list</string>
+
+</resources>

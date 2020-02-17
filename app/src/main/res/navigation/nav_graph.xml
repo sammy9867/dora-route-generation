@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/multiSelectionFragment">
+    <fragment android:id="@+id/mapFragment" android:name="com.thesis.routegenerator.ui.MapFragment"
+              android:label="fragment_map" tools:layout="@layout/fragment_map">
+        <action android:id="@+id/action_mapFragment_to_setTimeSlotFragment" app:destination="@id/setTimeSlotFragment"/>
+        <action android:id="@+id/action_mapFragment_to_placeDetailsFragment"
+                app:enterAnim="@anim/slide_up"
+                app:destination="@id/placeDetailsFragment"/>
+        <action android:id="@+id/action_mapFragment_to_multiSelectionFragment"
+                app:destination="@id/multiSelectionFragment"/>
+    </fragment>
+    <fragment android:id="@+id/multiSelectionFragment"
+              android:name="com.thesis.routegenerator.ui.MultiSelectionFragment"
+              android:label="fragment_multi_selection" tools:layout="@layout/fragment_multi_selection">
+        <action android:id="@+id/action_multiSelectionFragment_to_priorityAndFrequencyFragment"
+                app:destination="@id/priorityAndFrequencyFragment"/>
+    </fragment>
+    <fragment android:id="@+id/priorityAndFrequencyFragment"
+              android:name="com.thesis.routegenerator.ui.PriorityAndFrequencyFragment"
+              android:label="fragment_priority_and_frequency" tools:layout="@layout/fragment_priority_and_frequency">
+        <action android:id="@+id/action_priorityAndFrequencyFragment_to_multiSelectionFragment"
+                app:destination="@id/multiSelectionFragment"/>
+        <action android:id="@+id/action_priorityAndFrequencyFragment_to_setLocationFragment2"
+                app:destination="@id/setLocationFragment2"/>
+    </fragment>
+    <fragment android:id="@+id/setTimeSlotFragment" android:name="com.thesis.routegenerator.ui.SetTimeSlotFragment"
+              android:label="fragment_set_time_slot" tools:layout="@layout/fragment_set_time_slot">
+        <action android:id="@+id/action_setTimeSlotFragment_to_mapFragment" app:destination="@id/mapFragment"/>
+        <action android:id="@+id/action_setTimeSlotFragment_to_setLocationFragment2"
+                app:destination="@id/setLocationFragment2"/>
+    </fragment>
+    <fragment android:id="@+id/setLocationFragment2" android:name="com.thesis.routegenerator.ui.SetLocationFragment"
+              android:label="fragment_set_locationp" tools:layout="@layout/fragment_set_locationp">
+        <action android:id="@+id/action_setLocationFragment2_to_setTimeSlotFragment"
+                app:destination="@id/setTimeSlotFragment"/>
+        <action android:id="@+id/action_setLocationFragment2_to_priorityAndFrequencyFragment"
+                app:destination="@id/priorityAndFrequencyFragment"/>
+        <action android:id="@+id/action_setLocationFragment2_to_pinPointStartLocationFragment"
+                app:destination="@id/pinPointStartLocationFragment"/>
+        <action android:id="@+id/action_setLocationFragment2_to_pinPointEndLocationFragment"
+                app:destination="@id/pinPointEndLocationFragment"/>
+    </fragment>
+    <fragment android:id="@+id/pinPointStartLocationFragment"
+              android:name="com.thesis.routegenerator.ui.PinPointStartLocationFragment"
+              android:label="PinPointStartLocationFragment">
+        <action android:id="@+id/action_pinPointStartLocationFragment_to_setLocationFragment2"
+                app:destination="@id/setLocationFragment2"/>
+    </fragment>
+    <fragment android:id="@+id/pinPointEndLocationFragment"
+              android:name="com.thesis.routegenerator.ui.PinPointEndLocationFragment"
+              android:label="PinPointEndLocationFragment">
+        <action android:id="@+id/action_pinPointEndLocationFragment_to_setLocationFragment2"
+                app:destination="@id/setLocationFragment2"/>
+    </fragment>
+    <fragment android:id="@+id/placeDetailsFragment" android:name="com.thesis.routegenerator.ui.PlaceDetailsFragment"
+              android:label="fragment_place_details" tools:layout="@layout/fragment_place_details">
+        <action
+                android:id="@+id/action_placeDetailsFragment_to_mapFragment"
+                app:exitAnim="@anim/slide_down"
+                app:destination="@id/mapFragment"/>
+    </fragment>
+</navigation>

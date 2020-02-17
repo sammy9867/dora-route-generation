@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".ui.HomeActivity"
+        android:background="@color/white"
+       >
+
+    <!-- Home fragment -->
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                >
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="center"
+
+
+                    >
+
+                        <ImageView
+                                android:id="@+id/iv_dora"
+                                android:layout_width="180dp"
+                                android:layout_height="60dp"
+                                android:layout_marginTop="20dp"
+                                android:background="@drawable/dora_tv_black"
+                        />
+
+
+                        <ImageView
+                                android:id="@+id/iv_warsaw"
+                                android:layout_width="match_parent"
+                                android:layout_height="450dp"
+                                android:background="@drawable/plan"
+                        />
+
+
+                        <TextView
+                        android:id="@+id/tv_plan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PLAN YOUR TRIP"
+                        android:layout_marginTop="50dp"
+                        android:textColor="@color/black"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                />
+
+
+
+
+
+                <TextView
+                        android:id="@+id/tv_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Choose your preferences and plan your trip!"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="15sp"
+
+                />
+
+
+
+                <Button
+                        android:id="@+id/home_next_btn"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/results_button"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="Get Started"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                   />
+
+
+                    </LinearLayout>
+                </ScrollView>
+
+            </RelativeLayout>
+
+
+
+
+
+</layout>

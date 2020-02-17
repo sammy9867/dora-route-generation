@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".ui.SetTimeSlotFragment">
+
+    <!-- A fragment where the user can set his time slot and select whether he wants to visit
+         less/medium/more places -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               >
+
+            <RelativeLayout
+                android:id="@+id/relLayout_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/toolbar_time_slot"
+                    android:background="@color/black"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/user_input_toolbar_tv"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:layout_marginStart="5dp"
+                            android:textColor="@color/white"/>
+
+
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.Toolbar>
+
+             </RelativeLayout>
+
+                <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/relLayout_toolbar"
+
+                        >
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:layout_marginTop="50dp"
+                                android:layout_marginBottom="20dp"
+
+                               >
+
+
+                                <TextView
+                                        android:id="@+id/date_from_tv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_horizontal"
+                                        android:text="Date from:"
+                                        android:textStyle="bold"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginTop="40dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                />
+
+
+                            <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:background="@drawable/picker_border"
+                                    android:gravity="center"
+                            >
+
+
+                                <ImageView
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:src="@drawable/ic_calendar"
+
+                                />
+
+                                <TextView
+                                        android:id="@+id/date_from"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:singleLine="true"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+                                />
+
+
+                            </LinearLayout>
+
+
+                                <TextView
+                                        android:id="@+id/time_from_tv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Time from:"
+                                        android:textStyle="bold"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:layout_marginTop="50dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                />
+
+                            <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:background="@drawable/picker_border"
+                                    android:gravity="center"
+                            >
+
+                                <ImageView
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:src="@drawable/ic_time"
+
+                                />
+
+                                <TextView
+                                        android:id="@+id/time_from"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:singleLine="true"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                />
+
+                            </LinearLayout>
+
+
+                                 <TextView
+                                         android:id="@+id/time_to_tv"
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:text="Time to:"
+                                         android:textStyle="bold"
+                                         android:layout_marginStart="16dp"
+                                         android:layout_marginEnd="16dp"
+                                         android:layout_marginTop="50dp"
+                                         android:layout_marginBottom="10dp"
+                                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                 />
+
+
+                            <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:background="@drawable/picker_border"
+                                    android:gravity="center"
+                                    android:layout_marginBottom="20dp"
+                            >
+
+                                <ImageView
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:src="@drawable/ic_time"
+
+                                />
+
+                                <TextView
+                                        android:id="@+id/time_to"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center_vertical"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:fontFamily="sans-serif-medium"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                        android:singleLine="true"
+                                />
+
+                            </LinearLayout>
+
+
+
+
+                          </LinearLayout>
+
+                </ScrollView>
+       </RelativeLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/ic_time_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_forward_white"
+                android:scaleX="-1"
+                android:layout_gravity="bottom|start"
+                android:layout_margin="16dp"
+                app:backgroundTint="@color/black"
+                app:layout_anchorGravity="bottom|left|start" />
+
+        <Button
+                android:id="@+id/ic_time_next"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/results_button"
+                android:text="SHOW RESULTS"
+                android:textColor="@color/white"
+                android:layout_gravity="bottom|end|center_vertical"
+                android:layout_margin="20dp"
+                app:layout_anchorGravity="bottom|right|end" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

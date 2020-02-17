@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".ui.SetLocationFragment">
+
+    <!-- A fragment where the user can select his starting location -->
+    <!-- Note: Since Google has changed its Places API, this feature will be implemented later.
+               As of now, users current location is selected as default -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+        >
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar_location_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="148dp"
+                    android:background="@color/black"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                <LinearLayout
+                        android:id="@+id/location_details_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/set_location_toolbar_tv"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:layout_marginStart="5dp"
+                            android:textColor="@color/white"/>
+
+
+                </LinearLayout>
+
+                    <RelativeLayout
+                            android:id="@+id/location_details_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/location_details_tv"
+                            android:paddingTop="20dp">
+
+
+                        <LinearLayout
+                                android:id="@+id/location_details_iv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="80dp"
+                                android:orientation="vertical"
+                                android:padding="5dp"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                        >
+                            <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_user_location"
+                                    android:layout_gravity="center_horizontal"
+
+                            />
+
+                            <Space
+                                    android:layout_width="1dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"/>
+
+
+                            <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_map_pin"
+                                    android:layout_gravity="center_horizontal"
+
+                            />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                                android:id="@+id/location_details_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:orientation="vertical"
+                                android:paddingStart="20dp"
+                                android:paddingEnd="60dp"
+                                android:layout_toEndOf="@id/location_details_iv"
+                        >
+
+                            <EditText
+                                    android:id="@+id/et_starting_location"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="Set Starting Location"
+                                    android:textColorHint="#ffffff"
+                                    android:textColor="#ffffff"
+                                    android:textSize="20sp"
+                                    android:paddingStart="10dp"
+                                    android:inputType="textNoSuggestions"
+                                    android:paddingEnd="40dp"
+                                    android:background="@drawable/location_search_bar"
+                                    android:singleLine="true">
+                                <requestFocus/>
+                            </EditText>
+
+
+                            <Space
+                                    android:layout_width="1dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"/>
+
+                            <EditText
+                                    android:id="@+id/et_ending_location"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:hint="Set Ending Location"
+                                    android:textColorHint="#ffffff"
+                                    android:textColor="#ffffff"
+                                    android:textSize="20sp"
+                                    android:paddingStart="10dp"
+                                    android:inputType="textNoSuggestions"
+                                    android:paddingEnd="40dp"
+                                    android:background="@drawable/location_search_bar"
+                                    android:singleLine="true"
+
+
+                                   >
+                            </EditText>
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="80dp"
+                                android:orientation="vertical"
+                                android:paddingStart="5dp"
+                                android:paddingEnd="65dp"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_alignParentEnd="true"
+                        >
+                            <ImageButton
+                                    android:id="@+id/ib_starting_clear"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:src="@drawable/ic_close_white"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@color/black"
+
+                            />
+
+                            <Space
+                                    android:layout_width="1dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"/>
+
+
+                            <ImageButton
+                                    android:id="@+id/ib_ending_clear"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:src="@drawable/ic_close_white"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@color/black"
+                            />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:orientation="vertical"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="15dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_alignParentEnd="true"
+                    >
+                        <ImageButton
+                                android:id="@+id/ib_starting_pin"
+                                android:layout_width="33dp"
+                                android:layout_height="33dp"
+                                android:src="@drawable/ic_pinpoint"
+                                android:layout_gravity="center_horizontal"
+                                android:background="@drawable/circle_border_buttons"
+                                android:layout_marginTop="1dp"
+
+                        />
+
+
+
+                        <ImageButton
+                                android:id="@+id/ib_ending_pin"
+                                android:layout_width="33dp"
+                                android:layout_height="33dp"
+                                android:src="@drawable/ic_pinpoint"
+                                android:layout_gravity="center_horizontal"
+                                android:background="@drawable/circle_border_buttons"
+                                android:layout_marginTop="12dp"
+
+                        />
+
+                    </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_place_names"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/toolbar_location_list"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:background="@color/white"/>
+
+        </RelativeLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/ic_location_prev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_forward_white"
+                android:scaleX="-1"
+                android:layout_gravity="bottom|start"
+                android:layout_margin="16dp"
+                app:backgroundTint="@color/black"
+                app:layout_anchorGravity="bottom|left|start" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/ic_location_next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_forward_white"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="16dp"
+                app:backgroundTint="@color/black"
+                app:layout_anchorGravity="bottom|right|end" />
+
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
